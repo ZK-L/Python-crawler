@@ -1,8 +1,8 @@
 import scrapy
 
 
-class Aliexpress1Spider(scrapy.Spider):
-    name = 'aliexpress1' # name of the spider 
+class testCrawlerSpider(scrapy.Spider):
+    name = 'testCrawler' # name of the spider 
     start_urls = ['https://www.bigw.com.au/baby/baby-clothes/c/6122/']
 
     def parse(self, response):
@@ -28,4 +28,3 @@ class Aliexpress1Spider(scrapy.Spider):
         if nextPage is not None: 
             nextPage = response.urljoin(nextPage)
             yield scrapy.Request(nextPage, callback = self.parse)
-

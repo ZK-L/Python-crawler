@@ -1,4 +1,4 @@
-# Scrapy settings for aliexpress project
+# Scrapy settings for myCrawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,15 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'aliexpress'
+BOT_NAME = 'myCrawler'
 
-SPIDER_MODULES = ['aliexpress.spiders']
-NEWSPIDER_MODULE = 'aliexpress.spiders'
-
+SPIDER_MODULES = ['myCrawler.spiders']
+NEWSPIDER_MODULE = 'myCrawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'aliexpress (+http://www.yourdomain.com)'
+#USER_AGENT = 'myCrawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -46,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'aliexpress.middlewares.AliexpressSpiderMiddleware': 543,
+#    'myCrawler.middlewares.MycrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'aliexpress.middlewares.AliexpressDownloaderMiddleware': 543,
+#    'myCrawler.middlewares.MycrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -64,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'aliexpress.pipelines.AliexpressPipeline': 300,
+#    'myCrawler.pipelines.MycrawlerPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
