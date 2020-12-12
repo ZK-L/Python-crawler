@@ -3,18 +3,29 @@ import scrapy
 
 class Aliexpress1Spider(scrapy.Spider):
     name = 'aliexpress1' # name of the spider 
-    allowed_domains = ['aliexpress.com']
-    start_urls = ['https://www.aliexpress.com/af/category/100004960.html?categoryBrowse=y&origin=n&CatId=100004960&catName=drinkwar']
+    start_urls = ['https://www.bigw.com.au/baby/baby-clothes/c/6122/']
 
     def parse(self, response):
         print("processing:"+response.url)
 
-        product = {}
-        product['name'] = response.css('.product::text').extract()
-        product['range'] = response.css('.value::text').extract()
+        # create a dic to store the items 
+        products = {}
 
-        # Extract data using xpath
-        product['orders'] = response.xpath("//em[title-'Total Orders']/text()").extract()
-        procut['companyName'] = response.xpath("//a[class='store $p4pLog'/text()").extract()
+        # extract the item name 
+        name = response.css('h4.name a::text').getall()
+        # extract item price 
+        price = response.css('span.priceClass::text').getall()
 
-        yield product
+        rawData = zip(name, price)
+        # store the items in the dictionary
+        for item in rawData:
+            products[item[0].strip()] = item[1]
+        yield products
+
+        # generate a request to crawling next page 
+        nextPage = response.css('li.next a::attr(href)').get()
+        # check if the next page is not none
+        if nextPage is not None: 
+            nextPage = response.urljoin(nextPage)
+            yield scrapy.Request(nextPage, callback = self.parse)
+
