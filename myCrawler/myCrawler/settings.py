@@ -11,6 +11,10 @@ BOT_NAME = 'myCrawler'
 
 SPIDER_MODULES = ['myCrawler.spiders']
 NEWSPIDER_MODULE = 'myCrawler.spiders'
+# ITEM__PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+IMAGES_STORE = "C:/Users/lyuzh/Desktop/Newfolder"
+DOWNLOAD_DELAY = 0.3
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -62,9 +66,11 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'myCrawler.pipelines.MycrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'myCrawler.pipelines.imagCrawlerPipeline': 300,
+}
+
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

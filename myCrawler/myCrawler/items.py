@@ -6,7 +6,11 @@
 import scrapy
 
 
-class MycrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+# class MycrawlerItem(scrapy.Item):
+#     # define the fields for your item here like:
+#     # name = scrapy.Field()
+#     pass
+
+class imageItem(scrapy.Item):
+    img_src = scrapy.Field()
+    file_name = scrapy.Field()
