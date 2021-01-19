@@ -66,7 +66,7 @@ Use ``scrapy genspider spiderName websiteURl.com`` to generate a spider. Then it
 ### 3. Extract data 
  **Note**: You can extract data with css selectors using ``response.css()`` or XPath(XML) by using ``response.xpath()`` in the code edited in ``pass`` function. 
 
- <br>\* *Using ``scrapy shell websiteURL.com`` can enter the scrapy shell to test selecting elements using CSS with the response objec* 
+ <br>* **Using ``scrapy shell websiteURL.com`` can enter the scrapy shell to test selecting elements using CSS with the response objec. some website may return HTTP 403 error. Solved by add an agent: ``scrapy shell --set=USER_AGENT='Mozilla/5.0 URL.com``**
 
  * Extract data with **response.css()**
     * **response.css('title').getall()**
