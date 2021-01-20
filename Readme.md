@@ -103,3 +103,5 @@ if nextPage is not None:
 ```
 The spider will follow the link until hit the end. Also, you can define the rules by your own. 
 
+
+* in chrome console, use document.cookie to check cookie
