@@ -6,10 +6,12 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-# import scrapy
 # from scrapy.pipelines.images import ImagesPipeline
 
 # class myImgPipeline(ImagesPipeline):
+#     def file_path(self, request, response=None, info=None):
+#         return request.url.split('/')[-1]
+        
 
 
 class WallpapercrawlerPipeline:
