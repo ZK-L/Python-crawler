@@ -71,16 +71,22 @@ Use ``scrapy genspider spiderName websiteURl.com`` to generate a spider. Then it
  * Extract data with **response.css()**
     * **response.css('title').getall()**
     <br> We will get the full title element including its tags if we don't specify ``::text``.
-    ![](img/title.png)
+    
+      ![](img/title.png)
+    
     * **response.css('title::text').getall()**
     <br> It will extract all the text within the title element. By using ``get()`` instead of ``getall()``, only first result will return. 
-    ![](img/title2.png)
+    
+      ![](img/title2.png)
 
     * **Trim the text** <br>Using ``.strip()`` function can remove the space at the begining and the end of the text.
-    ![](img/title3.png)
+    
+      ![](img/title3.png)
 
     * **Examples**
+    
       ![](img/example.png)
+    
     Using ``response.css('h4.name a::text').get()`` can extract the item name from above code. 
     <br> Using ``response.css('h4.name a::attr(href)').get()`` can get the href link in the tag.
   
